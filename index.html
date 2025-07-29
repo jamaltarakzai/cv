@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamal Ahmed - Fighter Aircraft/Drone Technology Specialist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #232946;
+            --secondary: #eebbc3;
+            --accent: #3ddc97;
+            --background: #f4f6fb;
+            --glass: rgba(255,255,255,0.7);
+            --shadow: 0 8px 32px rgba(44,62,80,0.18);
+            --text-main: #232946;
+            --text-light: #6e6e6e;
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #e0e7ff 0%, #f4f6fb 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
+        .cv-container {
+            max-width: 950px;
+            background: var(--glass);
+            box-shadow: var(--shadow);
+            margin: 2.5rem auto;
+            border-radius: 24px;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(200,200,200,0.18);
+            transition: box-shadow 0.3s;
+        }
+        .cv-header {
+            background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+            color: white;
+            padding: 2.7rem 0 2.2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        .profile-container {
+            margin: 0 auto 1.2rem auto;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: var(--glass);
+            box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid var(--accent);
+            transition: box-shadow 0.3s;
+        }
+        .profile-container:hover {
+            box-shadow: 0 4px 32px rgba(61,220,151,0.18);
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .name-title h1 {
+            font-weight: 900;
+            font-size: 2.4rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 8px rgba(44,62,80,0.10);
+        }
+        .name-title h2 {
+            font-weight: 500;
+            font-size: 1.25rem;
+            opacity: 0.97;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            letter-spacing: 0.5px;
+        }
+        .contact-info {
+            margin-top: 1.2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.08rem;
+            background: rgba(255,255,255,0.18);
+            border-radius: 8px;
+            padding: 0.3rem 0.8rem;
+            box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .contact-item:hover, .contact-item a:hover {
+            background: var(--accent);
+            color: #fff !important;
+            box-shadow: 0 2px 8px rgba(61,220,151,0.10);
+            text-decoration: none;
+        }
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section-title {
+            color: var(--primary);
+            font-weight: 800;
+            border-left: 6px solid var(--accent);
+            padding-left: 0.8rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.22rem;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #eebbc3 0%, #fff 100%);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 4px rgba(44,62,80,0.03);
+        }
+        .card-section {
+            background: rgba(255,255,255,0.85);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+            padding: 1.3rem 1.1rem;
+            margin-bottom: 1.7rem;
+            transition: box-shadow 0.2s, background 0.2s;
+            border: 1px solid #f0f0f0;
+        }
+        .card-section:hover {
+            box-shadow: 0 4px 24px rgba(61,220,151,0.10);
+            background: #f8fafc;
+        }
+        .timeline {
+            border-left: 3px solid var(--accent);
+            margin-left: 0.5rem;
+            padding-left: 1.5rem;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.7s;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.1rem;
+            top: 0.2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--background);
+            border: 3px solid var(--accent);
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+        }
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.01rem;
+        }
+        .timeline-title {
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        .timeline-company {
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+        .skill-name {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+        .skill-bar {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 60%, var(--secondary) 100%);
+            border-radius: 5px;
+            transition: width 1s cubic-bezier(.4,2,.6,1);
+        }
+        .progress-90 { width: 90%; }
+        .progress-85 { width: 85%; }
+        .progress-80 { width: 80%; }
+        .progress-75 { width: 75%; }
+        .achievement-card {
+            background: rgba(255,255,255,0.95);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin-bottom: 1.2rem;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 1px 8px rgba(44,62,80,0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .achievement-card:hover {
+            transform: translateY(-4px) scale(1.03);
+            background: #f4f6fb;
+            box-shadow: 0 4px 24px rgba(61,220,151,0.10);
+        }
+        .achievement-icon {
+            font-size: 1.7rem;
+            color: var(--accent);
+            margin-bottom: 0.7rem;
+        }
+        .education-item {
+            margin-bottom: 1.1rem;
+            list-style: none;
+        }
+        .education-title {
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .education-year {
+            color: var(--accent);
+            font-weight: 700;
+        }
+        .cv-footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.2rem 0 1rem 0;
+            margin-top: 2rem;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+        #printBtn {
+            box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+            border-radius: 8px;
+            font-weight: 600;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+        #printBtn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 4px 16px rgba(238,187,195,0.12);
+        }
+        @media (max-width: 991px) {
+            .cv-container {
+                margin: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .cv-container {
+                max-width: 100%;
+                margin: 0.5rem;
+            }
+            .profile-container {
+                width: 100px;
+                height: 100px;
+            }
+            .name-title h1 {
+                font-size: 1.3rem;
+            }
+            .name-title h2 {
+                font-size: 1rem;
+            }
+            .card-section {
+                padding: 0.8rem 0.5rem;
+            }
+            .section-title {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .cv-header {
+                padding: 1.2rem 0 1rem 0;
+            }
+            .profile-container {
+                width: 70px;
+                height: 70px;
+            }
+            .name-title h1 {
+                font-size: 1rem;
+            }
+            .name-title h2 {
+                font-size: 0.85rem;
+            }
+            .contact-info {
+                gap: 0.5rem;
+            }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        /* Hide timeline-item::before if it causes layout or visual issues */
+        .timeline-item::before {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header Section with Profile Picture -->
+        <header class="cv-header position-relative">
+            <div class="container">
+                <button id="printBtn" class="btn btn-light position-absolute top-0 end-0 m-3 d-print-none" onclick="printCV()">
+                    <i class="fas fa-print"></i> Print
+                </button>
+                <div class="profile-container">
+                    <img src="mypicture.jpg" alt="Jamal Ahmed Profile Picture" class="profile-image" id="profileImage">
+                </div>
+                <div class="name-title">
+                    <h1>JAMAL AHMED</h1>
+                    <h2>Fighter Aircraft/Drone Technology Specialist</h2>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+966551794859</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>jamal.tarakzai.ksa@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Saudi Arabia</span>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://www.linkedin.com/in/jamal-ahmed/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:0.5rem;">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content Section -->
+        <div class="container py-4">
+            <div class="row g-4">
+                <!-- Left Column (Skills) -->
+                <div class="col-lg-4">
+                    <section class="card-section mb-3">
+                        <h3 class="section-title">ABOUT ME</h3>
+                        <p>Experienced UAV Pilot specializing in mining exploration, aerial survey, and resource mapping. Expertise in deploying advanced drone technology for geological analysis, terrain modeling, and mineral prospecting.</p>
+                    </section>
+                    <section class="card-section mb-3">
+                        <h3 class="section-title">TECHNICAL SKILLS</h3>
+                        <div class="skill-item">
+                            <div class="skill-name">Drone Operations & Flight Management</div>
+                            <div class="skill-bar">
+                                <div class="skill-level progress-90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Aerial Survey & Mapping</div>
+                            <div class="skill-bar">
+                                <div class="skill-level progress-85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">LiDAR Data Processing</div>
+                            <div class="skill-bar">
+                                <div class="skill-level progress-80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">UAV Defense & Security Systems</div>
+                            <div class="skill-bar">
+                                <div class="skill-level progress-75"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-section mb-3">
+                        <h3 class="section-title">CORE COMPETENCIES</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex align-items-center border-0 bg-transparent p-0 mb-1">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                Mineral Exploration Surveys
+                            </li>
+                            <li class="list-group-item d-flex align-items-center border-0 bg-transparent p-0 mb-1">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                Resource Mapping & Geological Analysis
+                            </li>
+                            <li class="list-group-item d-flex align-items-center border-0 bg-transparent p-0 mb-1">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                Hyperspectral Imaging
+                            </li>
+                            <li class="list-group-item d-flex align-items-center border-0 bg-transparent p-0 mb-1">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                Drone Program Management
+                            </li>
+                            <li class="list-group-item d-flex align-items-center border-0 bg-transparent p-0 mb-1">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                Regulatory Compliance (GACA/NEBOSH)
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="card-section mb-3">
+                        <h3 class="section-title">EDUCATION</h3>
+                        <div class="education-item">
+                            <div class="education-title">GACA Part 107 - UAV Commercial License</div>
+                            <div class="education-year">2021</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-title">NEBOSH IGC3 - OHS</div>
+                            <div class="education-year">2019</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-title">IOSH Managing Safety</div>
+                            <div class="education-year">2016</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-title">Master of Business Administration</div>
+                            <div class="education-year">2012</div>
+                        </div>
+                        <div class="education-item">
+                            <div class="education-title">Diploma of Electrical (Aircraft Technology)</div>
+                            <div class="education-year">2001</div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Right Column (Experience & Achievements) -->
+                <div class="col-lg-8">
+                    <section class="card-section mb-3">
+                        <h3 class="section-title">WORK EXPERIENCE</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4 class="timeline-title">Senior Drone Pilot – <span class="timeline-date">April 2025 - Present</span></h4>
+                                <span class="timeline-company">Tilad Environment Consultancy</span>
+                                <ul>
+                                    <li>Led drone-based mining exploration projects using DJI M300/550 RTK with Zenmuse payloads</li>
+                                    <li>Conducted hyperspectral surveys to identify mineral signatures and delineate ore bodies</li>
+                                    <li>Processed LiDAR data for terrain modeling and pit optimization in mining operations</li>
+                                    <li>Trained teams in RTK drone operations for high-accuracy topographic surveys</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="timeline-title">Drone Specialist – <span class="timeline-date">Feb 2023 - Mar 2025</span></h4>
+                                <span class="timeline-company">Lensic Drone Solutions</span>
+                                <ul>
+                                    <li>Executed aerial surveys for mining exploration with multispectral imaging</li>
+                                    <li>Mapped exploration tenements using orthomosaic and DSM/DTM outputs</li>
+                                    <li>Optimized flight paths for resource corridor mapping in challenging terrains</li>
+                                    <li>Delivered GIS-integrated reports highlighting potential mineralized zones</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="timeline-title">UAV Team Lead – <span class="timeline-date">Apr 2021 - Jan 2023</span></h4>
+                                <span class="timeline-company">ALPHADEEM</span>
+                                <ul>
+                                    <li>Directed UAV missions for mining infrastructure inspections</li>
+                                    <li>Generated high-resolution 3D models of open-pit mines for volume calculations</li>
+                                    <li>Supported greenfield exploration with aerial photogrammetry</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="timeline-title">Operations Incharge – <span class="timeline-date">Jul 2019 – Jan 2021</span></h4>
+                                <span class="timeline-company">AIR Academy Pakistan</span>
+                                <ul>
+                                    <li>Oversaw daily flying club operations, ensuring safety and regulatory compliance.</li>
+                                    <li>Managed flight schedules, aircraft maintenance, and staff training.</li>
+                                    <li>Streamlined procedures to improve efficiency and customer satisfaction.</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="timeline-title">Field Officer – <span class="timeline-date">Mar 2018 – Jun 2019</span></h4>
+                                <span class="timeline-company">SAAB 2000</span>
+                                <ul>
+                                    <li>Led commissioning and integration of ground and air systems for SAAB aircraft.</li>
+                                    <li>Performed system setups, calibration, and troubleshooting for avionics and flight controls.</li>
+                                    <li>Developed SOPs and coordinated with engineering teams to ensure operational readiness.</li>
+                                </ul>
+                            </div>
+                            <div class="timeline-item">
+                                <h4 class="timeline-title">Officer / Senior Engineering Associate – <span class="timeline-date">June 2001 – Jan 2018</span></h4>
+                                <span class="timeline-company">Pakistan Air Force</span>
+                                <ul>
+                                    <li>Specialized in deployment and assessment of counter-UAV systems for military use.</li>
+                                    <li>Provided training on UAV defense technologies and analyzed drone surveillance data.</li>
+                                    <li>Collaborated with security teams to enhance site protection and tactical intelligence.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-section mb-3">
+                        <h3 class="section-title">KEY ACHIEVEMENTS</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="achievement-card h-100">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h5>Exploration Target Discovery</h5>
+                                    <p>Discovered 3 new exploration targets in Saudi Arabia using drone-based hyperspectral data (2024)</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="achievement-card h-100">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h5>Cost Reduction</h5>
+                                    <p>Reduced survey costs by 40% for a gold mining project via autonomous drone LiDAR mapping</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="achievement-card h-100">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h5>Team Training</h5>
+                                    <p>Trained 15+ geologists in drone data interpretation for mineral exploration</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="achievement-card h-100">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h5>Defense Innovation</h5>
+                                    <p>Developed UAV defense strategies adopted by military security operations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-section mb-3">
+                        <h3 class="section-title">SOFTWARE & EQUIPMENT</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Pix4Dmapper</li>
+                                    <li>ArcGIS Pro</li>
+                                    <li>DroneDeploy</li>
+                                    <li>Global Mapper</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>DJI M300/350 RTK</li>
+                                    <li>Zenmuse P1/L1/H20</li>
+                                    <li>Autel Dragonfish</li>
+                                    <li>Trimble GPS Systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="cv-footer">
+            <div class="container">
+                <p class="mb-0">&copy; 2025 Jamal Ahmed. All rights reserved.</p>
+                <p class="mb-0">Designed by Jamal Ahmed</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function printCV() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
